@@ -22,6 +22,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-qL-9OK">
+                                <rect key="frame" x="16" y="143" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQw-qb-to9">
                                 <rect key="frame" x="16" y="28" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,8 +39,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-Uq-SZU">
-                                <rect key="frame" x="277" y="285" width="47" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS6-Uq-SZU">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,14 +48,10 @@
                                     <segue destination="A4q-bQ-JEs" kind="show" id="Fzi-C8-KfG"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-qL-9OK">
-                                <rect key="frame" x="16" y="143" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZS6-Uq-SZU" firstAttribute="top" secondItem="Na7-qL-9OK" secondAttribute="bottom" constant="112" id="0DC-eL-DOh"/>
                             <constraint firstItem="kC1-1F-vQe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="1d8-oA-7ib"/>
                             <constraint firstItem="o4p-fm-ER0" firstAttribute="top" secondItem="kC1-1F-vQe" secondAttribute="bottom" constant="27" id="9we-IR-ypS"/>
                             <constraint firstItem="Na7-qL-9OK" firstAttribute="top" secondItem="o4p-fm-ER0" secondAttribute="bottom" constant="8" id="DNw-ez-wNh"/>
@@ -62,6 +63,8 @@
                             <constraint firstItem="kC1-1F-vQe" firstAttribute="top" secondItem="YQw-qb-to9" secondAttribute="bottom" constant="8" id="ZID-AX-XN6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kC1-1F-vQe" secondAttribute="trailing" id="arR-lO-Qh6"/>
                             <constraint firstItem="Na7-qL-9OK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="iR1-4d-tPH"/>
+                            <constraint firstItem="ZS6-Uq-SZU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sdn-Mv-Ktp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZS6-Uq-SZU" secondAttribute="trailing" id="t5s-WR-Tpe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Na7-qL-9OK" secondAttribute="trailing" id="vsO-tk-U9F"/>
                         </constraints>
                     </view>
