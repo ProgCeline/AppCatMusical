@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LoginManager.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UICollectionViewDataSource>
+
+
 
 
 @end

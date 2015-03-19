@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		945B82421ABAFDB300144B33 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B82411ABAFDB300144B33 /* Album.m */; };
+		945B82451ABB011600144B33 /* XmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B82441ABB011600144B33 /* XmlParserDelegate.m */; };
 		9469A9321AB9BEF7000ECE22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9311AB9BEF7000ECE22 /* main.m */; };
 		9469A9351AB9BEF7000ECE22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9341AB9BEF7000ECE22 /* AppDelegate.m */; };
 		9469A9381AB9BEF7000ECE22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9371AB9BEF7000ECE22 /* ViewController.m */; };
@@ -47,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		945B82401ABAFDB300144B33 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		945B82411ABAFDB300144B33 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		945B82431ABB011600144B33 /* XmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserDelegate.h; sourceTree = "<group>"; };
+		945B82441ABB011600144B33 /* XmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserDelegate.m; sourceTree = "<group>"; };
 		9469A92C1AB9BEF7000ECE22 /* AppCatMusical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCatMusical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9469A9301AB9BEF7000ECE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9469A9311AB9BEF7000ECE22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 				9469A9961ABAC813000ECE22 /* DetailViewController.m */,
 				94D566721ABAE3A700537635 /* LoginManager.h */,
 				94D566731ABAE3A700537635 /* LoginManager.m */,
+				945B82401ABAFDB300144B33 /* Album.h */,
+				945B82411ABAFDB300144B33 /* Album.m */,
+				945B82431ABB011600144B33 /* XmlParserDelegate.h */,
+				945B82441ABB011600144B33 /* XmlParserDelegate.m */,
 			);
 			path = AppCatMusical;
 			sourceTree = "<group>";
@@ -342,12 +352,14 @@
 				94D5667D1ABAE6BD00537635 /* AFURLSessionManager.m in Sources */,
 				9469A9571AB9CBCB000ECE22 /* LoginViewController.m in Sources */,
 				9469A9381AB9BEF7000ECE22 /* ViewController.m in Sources */,
+				945B82421ABAFDB300144B33 /* Album.m in Sources */,
 				94D566781ABAE6BD00537635 /* AFNetworkReachabilityManager.m in Sources */,
 				94D5667E1ABAE6C600537635 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				9469A9971ABAC813000ECE22 /* DetailViewController.m in Sources */,
 				94D5667A1ABAE6BD00537635 /* AFURLConnectionOperation.m in Sources */,
 				94D566831ABAE6C600537635 /* UIProgressView+AFNetworking.m in Sources */,
 				94D566771ABAE6BD00537635 /* AFHTTPSessionManager.m in Sources */,
+				945B82451ABB011600144B33 /* XmlParserDelegate.m in Sources */,
 				94D5667B1ABAE6BD00537635 /* AFURLRequestSerialization.m in Sources */,
 				9469A9351AB9BEF7000ECE22 /* AppDelegate.m in Sources */,
 				94D566811ABAE6C600537635 /* UIButton+AFNetworking.m in Sources */,

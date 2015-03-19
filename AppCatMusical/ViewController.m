@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import "XmlParserDelegate.h"
+#import "Album.h"
 
 @interface ViewController ()
 
@@ -15,12 +17,18 @@
 
 @implementation ViewController {
 
-    NSMutableArray *array;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    array = [[NSMutableArray alloc]init]; 
+    NSURL *url = [NSURL URLWithString: @"http://perso.imerir.com/cboyer/xmlCatMusical.xml"];
+    XmlParserDelegate *myParser = [[XmlParserDelegate alloc]
+                                   parseXMLAtURL:url toObject:@"Album" parseError:nil];
+    
+    for(int i = 0; i < [[myParser items] count]; i++) {
+        NSLog(@"pochette: %@", [(Album*)[[myParser items] objectAtIndex:i] pochette]);
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
