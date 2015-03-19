@@ -12,11 +12,14 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+
+    NSMutableArray *array;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    array = [[NSMutableArray alloc]init]; 
 }
 
 - (void)didReceiveMemoryWarning {
