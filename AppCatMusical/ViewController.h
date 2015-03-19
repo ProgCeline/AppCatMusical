@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginManager.h"
 
-@interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController : UIViewController
 
 
 @end
