@@ -75,12 +75,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-587" y="138"/>
+            <point key="canvasLocation" x="-641" y="138"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FQI-X3-U7W">
             <objects>
-                <viewController id="A4q-bQ-JEs" sceneMemberID="viewController">
+                <viewController id="A4q-bQ-JEs" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lhg-2j-0o2"/>
                         <viewControllerLayoutGuide type="bottom" id="QFD-0L-tv8"/>
@@ -98,27 +98,22 @@
                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="cnF-cL-2Pv">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Album" id="cnF-cL-2Pv" customClass="AlbumCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tw-Gc-c46">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tw-Gc-c46">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="8tw-Gc-c46" secondAttribute="trailing" id="AG3-WL-oQR"/>
-                                            <constraint firstItem="8tw-Gc-c46" firstAttribute="top" secondItem="cnF-cL-2Pv" secondAttribute="topMargin" id="VWc-0z-61E"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="8tw-Gc-c46" secondAttribute="bottom" id="Y6e-gX-jiC"/>
-                                            <constraint firstItem="8tw-Gc-c46" firstAttribute="leading" secondItem="cnF-cL-2Pv" secondAttribute="leadingMargin" id="Yob-2i-bff"/>
-                                        </constraints>
                                         <connections>
-                                            <segue destination="KOY-dm-jpu" kind="showDetail" id="HvY-zH-b6Z"/>
+                                            <outlet property="imgCollectionView" destination="8tw-Gc-c46" id="D5Q-F3-mrB"/>
+                                            <segue destination="KOY-dm-jpu" kind="presentation" id="9zj-jt-ZCO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -130,10 +125,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="fXT-hI-RqO" id="o0s-cE-UUm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z1-eQ-JtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="138"/>
+            <point key="canvasLocation" x="81" y="138"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ivi-t2-yRt">
@@ -180,14 +178,14 @@
                                 <rect key="frame" x="16" y="276" width="568" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a5I-vk-cJG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GO9-Ss-cVd" style="IBUITableViewCellStyleDefault" id="a5I-vk-cJG">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5I-vk-cJG" id="3uw-NB-PPq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Piste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL4-Rm-a6s">
-                                                    <rect key="frame" x="15" y="11" width="42" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Piste" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GO9-Ss-cVd">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -220,10 +218,16 @@
                             <constraint firstItem="03D-sX-7IO" firstAttribute="leading" secondItem="nQB-ct-VdD" secondAttribute="leadingMargin" id="xnD-Ab-tNK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="artiste" destination="KFV-XY-Qaa" id="ogF-PE-XYq"/>
+                        <outlet property="nom" destination="A6T-NG-9js" id="Nvc-7t-ccK"/>
+                        <outlet property="pisteTableView" destination="03D-sX-7IO" id="Y9p-e7-hha"/>
+                        <outlet property="pochette" destination="8J5-5a-t0e" id="Fhu-CW-ua6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHi-Tc-Qhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825" y="137"/>
+            <point key="canvasLocation" x="763" y="138"/>
         </scene>
     </scenes>
 </document>

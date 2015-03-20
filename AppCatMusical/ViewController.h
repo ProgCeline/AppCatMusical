@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LoginManager.h"
 
-@interface ViewController : UIViewController <UICollectionViewDataSource>
+@interface ViewController : UIViewController 
 
-
-
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 

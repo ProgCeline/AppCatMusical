@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Album.h"
 
 @interface DetailViewController ()
 
@@ -14,24 +15,30 @@
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewWillAppear:(BOOL)animated {
+    //faire apparaitre les données
+    //self.pochette.image = [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:album.pochette]]];
+    //self.nom.text = self.album.nom;
+    //self.artiste.text = self.album.artiste;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0; //self.catalogue.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Album" forIndexPath:indexPath];
+//    
+//    Album* album = [self.catalogue objectAtIndex:indexPath.row];
+//    
+//    cell.textLabel.text = album.nom;
+//   
+//    
+//    return cell;
+return nil;
 }
-*/
+
+
 
 @end

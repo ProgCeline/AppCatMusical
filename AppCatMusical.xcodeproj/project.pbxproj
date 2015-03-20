@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		945B82421ABAFDB300144B33 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B82411ABAFDB300144B33 /* Album.m */; };
 		945B82451ABB011600144B33 /* XmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B82441ABB011600144B33 /* XmlParserDelegate.m */; };
+		945B82481ABB145E00144B33 /* AlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 945B82471ABB145E00144B33 /* AlbumCollectionViewCell.m */; };
 		9469A9321AB9BEF7000ECE22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9311AB9BEF7000ECE22 /* main.m */; };
 		9469A9351AB9BEF7000ECE22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9341AB9BEF7000ECE22 /* AppDelegate.m */; };
 		9469A9381AB9BEF7000ECE22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9469A9371AB9BEF7000ECE22 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		945B82411ABAFDB300144B33 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		945B82431ABB011600144B33 /* XmlParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserDelegate.h; sourceTree = "<group>"; };
 		945B82441ABB011600144B33 /* XmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserDelegate.m; sourceTree = "<group>"; };
+		945B82461ABB145E00144B33 /* AlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		945B82471ABB145E00144B33 /* AlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCollectionViewCell.m; sourceTree = "<group>"; };
 		9469A92C1AB9BEF7000ECE22 /* AppCatMusical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCatMusical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9469A9301AB9BEF7000ECE22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9469A9311AB9BEF7000ECE22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				945B82411ABAFDB300144B33 /* Album.m */,
 				945B82431ABB011600144B33 /* XmlParserDelegate.h */,
 				945B82441ABB011600144B33 /* XmlParserDelegate.m */,
+				945B82461ABB145E00144B33 /* AlbumCollectionViewCell.h */,
+				945B82471ABB145E00144B33 /* AlbumCollectionViewCell.m */,
 			);
 			path = AppCatMusical;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				94D566801ABAE6C600537635 /* UIAlertView+AFNetworking.m in Sources */,
 				94D566851ABAE6C600537635 /* UIWebView+AFNetworking.m in Sources */,
 				94D5667F1ABAE6C600537635 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				945B82481ABB145E00144B33 /* AlbumCollectionViewCell.m in Sources */,
 				94D566761ABAE6BD00537635 /* AFHTTPRequestOperationManager.m in Sources */,
 				94D566841ABAE6C600537635 /* UIRefreshControl+AFNetworking.m in Sources */,
 				94D566791ABAE6BD00537635 /* AFSecurityPolicy.m in Sources */,

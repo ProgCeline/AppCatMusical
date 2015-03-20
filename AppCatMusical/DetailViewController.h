@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *pochette;
+@property (weak, nonatomic) IBOutlet UITextField *nom;
+@property (weak, nonatomic) IBOutlet UITextField *artiste;
+@property (weak, nonatomic) IBOutlet UITableView *pisteTableView;
+
 
 @end

@@ -8,16 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Album : NSObject {
-    NSString *pochette;
-    NSString *nom;
-    NSString *artiste;
-    NSString *piste;
-}
+@interface Album: NSObject
 
-@property (nonatomic, retain) NSString *pochette;
-@property (nonatomic, retain) NSString *nom;
-@property (nonatomic, retain) NSString *artiste;
-@property (nonatomic, retain) NSString *piste;
-
+@property (strong) NSString* pochette;
+@property (strong) NSString* nom;
+@property (strong) NSString* artiste;
+@property (strong) NSArray*  pistes;
 @end

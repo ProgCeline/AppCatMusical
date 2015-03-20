@@ -7,16 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Album.h"
 
-@interface XmlParserDelegate : NSObject <NSXMLParserDelegate> {
-    NSString *className;
-    NSMutableArray *items;
-    NSObject *item; // stands for any class
-    NSString *currentNodeName;
-    NSMutableString *currentNodeContent;
-}
-- (NSArray *)items;
-- (id)parseXMLAtURL:(NSURL *)url
-           toObject:(NSString *)aClassName
-         parseError:(NSError **)error;
+@interface XmlParserDelegate : NSObject <NSXMLParserDelegate>
+
+@property (strong) NSMutableArray* currentlyReading;
+
+@property (strong) NSMutableArray* catalogue;
+@property (strong) Album* temporaryAlbum;
+@property (strong) NSMutableArray* temporaryPistes;
+
 @end

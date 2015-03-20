@@ -9,67 +9,61 @@
 #import "XmlParserDelegate.h"
 
 @implementation XmlParserDelegate
-- (NSArray *)items
-{
-    return items;
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    // Nous allons a chaque fois recuperer le precedant objet correspondant
+    if ([self.currentlyReading. lastObject isEqualToString:@"pochette"])
+    {
+        self.temporaryAlbum.pochette = string;
+    }
+    else if([self.currentlyReading.lastObject isEqualToString:@"nom"])
+    {
+        self.temporaryAlbum.nom = string;
+    }
+    else if ([self.currentlyReading.lastObject isEqualToString:@"artiste"])
+    {
+        self.temporaryAlbum.artiste = string;
+    }
+    else if ([self.currentlyReading.lastObject isEqualToString:@"piste"])
+    {
+        [self.temporaryPistes addObject:string];
+    }
 }
 
-- (id)parseXMLAtURL:(NSURL *)url
-           toObject:(NSString *)aClassName
-         parseError:(NSError **)error
-{
-    items = [[NSMutableArray alloc] init];
-    className = aClassName;
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-    [parser setDelegate:self];
-    [parser parse];
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
-    if([parser parserError] && error) {
-        *error = [parser parserError];
+    if ([elementName isEqualToString:@"catalogue"])
+    {   // on commence à lire le catalogue...
+        // on initialise nos variables
+        self.currentlyReading = [NSMutableArray array];
+        self.catalogue = [NSMutableArray array];
     }
-    return self;
+    else if ([elementName isEqualToString:@"album"])
+    {   // on commence à lire album, donc on crée un album temporaire
+        self.temporaryAlbum = [[Album alloc] init];
+    }
+    else if ([elementName isEqualToString:@"pistes"])
+    {   // on commence à lire les pistes, donc on crée une liste de piste temporaire
+        self.temporaryPistes = [NSMutableArray array];
+    }
+    
+    // se souvenir du contexte de lecture
+    [self.currentlyReading addObject:elementName];
 }
 
-- (void)parser:(NSXMLParser *)parser
-didStartElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-    attributes:(NSDictionary *)attributeDict
-{
-    NSLog(@"Open tag: %@", elementName);
-    if([elementName isEqualToString:className]) {
-        // create an instance of a class on run-time
-        item = [[NSClassFromString(className) alloc] init];
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
+    if ([elementName isEqualToString:@"album"])
+    {   // quand on a fini de lire "album", on ajoute l'album construit au catalogue.
+        [self.catalogue addObject:self.temporaryAlbum];
     }
-    else {
-        currentNodeName = [elementName copy];
-        currentNodeContent = [[NSMutableString alloc] init];
+    else if ([elementName isEqualToString:@"pistes"])
+    {   // quand on a fini de lire "pistes", on ajoute la liste des pistes à l'album temporaire
+        self.temporaryAlbum.pistes = [NSArray arrayWithArray:self.temporaryPistes];
     }
-}
-
-- (void)parser:(NSXMLParser *)parser
- didEndElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
-{
-    NSLog(@"Close tag: %@", elementName);
-    if([elementName isEqualToString:className]) {
-        [items addObject:item];
-        item = nil;
-    }
-    else if([elementName isEqualToString:currentNodeName]) {
-        // use key-value coding
-        [item setValue:currentNodeContent forKey:elementName];
-        
-        currentNodeContent = nil;
-        currentNodeName = nil;
-    }
-}
-
-- (void)parser:(NSXMLParser *)parser
-foundCharacters:(NSString *)string
-{   
-    [currentNodeContent appendString:string];
+    
+    // fermer le contexte de lecture...
+    [self.currentlyReading removeLastObject];
 }
 
 @end

@@ -10,30 +10,42 @@
 #import "AFNetworking.h"
 #import "XmlParserDelegate.h"
 #import "Album.h"
+#import "AlbumCollectionViewCell.h"
 
-@interface ViewController ()
+@interface ViewController()
 
+@property (strong) NSArray* catalogue;
 @end
 
 @implementation ViewController {
 
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSURL *url = [NSURL URLWithString: @"http://perso.imerir.com/cboyer/xmlCatMusical.xml"];
-    XmlParserDelegate *myParser = [[XmlParserDelegate alloc]
-                                   parseXMLAtURL:url toObject:@"Album" parseError:nil];
     
-    for(int i = 0; i < [[myParser items] count]; i++) {
-        NSLog(@"pochette: %@", [(Album*)[[myParser items] objectAtIndex:i] pochette]);
-    }
+    XmlParserDelegate* parserDelegate = [[XmlParserDelegate alloc] init];
+    
+    NSXMLParser* parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://perso.imerir.com/cboyer/xmlCatMusical.xml"]];
+    parser.delegate = parserDelegate;
+    [parser parse];
+    
+    self.catalogue = [NSArray arrayWithArray:parserDelegate.catalogue];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.catalogue.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    AlbumCollectionViewCell* cell = [ collectionView dequeueReusableCellWithReuseIdentifier:@"Album" forIndexPath:indexPath];
+    Album* album = [self.catalogue objectAtIndex:indexPath.row];
+    
+    cell.imgCollectionView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:album.pochette]]];
+    return cell;
 }
 
 @end
