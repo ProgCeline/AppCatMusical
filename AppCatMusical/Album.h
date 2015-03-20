@@ -14,4 +14,6 @@
 @property (strong) NSString* nom;
 @property (strong) NSString* artiste;
 @property (strong) NSArray*  pistes;
+
+- (NSInteger) count;
 @end

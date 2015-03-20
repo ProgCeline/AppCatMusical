@@ -11,6 +11,7 @@
 #import "XmlParserDelegate.h"
 #import "Album.h"
 #import "AlbumCollectionViewCell.h"
+#import "DetailViewController.h"
 
 @interface ViewController()
 
@@ -46,6 +47,16 @@
     
     cell.imgCollectionView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:album.pochette]]];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    NSIndexPath* indexPath = self.collectionView.indexPathsForSelectedItems[0];
+    Album* album = [self.catalogue objectAtIndex:indexPath.item];
+   
+    DetailViewController* vc = segue.destinationViewController;
+    vc.album = album;
 }
 
 @end

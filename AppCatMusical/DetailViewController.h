@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Album.h"
 
 @interface DetailViewController : UIViewController
+@property (strong) Album* album;
 @property (weak, nonatomic) IBOutlet UIImageView *pochette;
 @property (weak, nonatomic) IBOutlet UITextField *nom;
 @property (weak, nonatomic) IBOutlet UITextField *artiste;

@@ -15,28 +15,22 @@
 
 @implementation DetailViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    //faire apparaitre les données
-    //self.pochette.image = [[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:album.pochette]]];
-    //self.nom.text = self.album.nom;
-    //self.artiste.text = self.album.artiste;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.nom.text = self.album.nom;
+    self.artiste.text = self.album.artiste;
+    
 }
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0; //self.catalogue.count;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {    
+    return [self.album count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Album" forIndexPath:indexPath];
-//    
-//    Album* album = [self.catalogue objectAtIndex:indexPath.row];
-//    
-//    cell.textLabel.text = album.nom;
-//   
-//    
-//    return cell;
-return nil;
+   UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Album" forIndexPath:indexPath];
+    NSString* actuPiste = [self.album.pistes objectAtIndex:indexPath.item];
+    cell.textLabel.text = actuPiste;
+
+    return cell;
 }
 
 

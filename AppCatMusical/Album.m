@@ -10,4 +10,9 @@
 
 @implementation Album
 
+-(NSInteger) countOfPistes
+{
+    return [self.pistes count];
+}
+
 @end
